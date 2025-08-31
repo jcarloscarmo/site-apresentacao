@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root{
+    --cor-fundo: #000000;
+    --cor-texto: #F6F6F6;
+    --cor-destaque: #22D4FD;
+    --cor-hover: #272727;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+   
+    box-sizing: border-box;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+
+}
+
+.cabecalho__menu{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--cor-destaque);
+}
+
+
+
+.apresentacao{
+    padding: 5% 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.titulo-destaque{
+    color: var(--cor-destaque);
+}
+
+.apresentacao__conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;
+    font-family: 'Krona One', sans-serif;
+}
+
+.apresentacao__conteudo__texto{
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.apresentacao__links__subtitulo{
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-family: 'krona one', sans-serif;
+}
+
+.apresentacao__links__navegacao{
+    /* background-color: #22D4FD; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-destaque);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Ícone Instagram vazado deve seguir a cor de destaque do rodapé */
+.apresentacao__links__navegacao--instagram{
+    color: var(--cor-destaque); /* define currentColor para o svg */
+}
+
+.apresentacao__links__navegacao--instagram svg{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Página 'about' - aplicar cor de destaque aos <strong> */
+.page-about .apresentacao__conteudo__texto strong{
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+.apresentacao__links__navegacao:hover{
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem{
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+
+}
+
+.rodape{
+    background-color: var(--cor-destaque);
+    padding: 24px 0;
+    text-align: center;
+    color: var(--cor-fundo);
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+@media (max-width:1200px){
+
+    .cabecalho{
+        padding: 5% 0 0 5%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%  ;
+        align-items: center;
+    }
+
+    .apresentacao__conteudo{
+        width: auto; 
+    }
+}
+
+[data-anime] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+[data-anime="true"] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.apresentacao__conteudo__titulo, .apresentacao__conteudo__texto, .apresentacao__links, .apresentacao__imagem {
+  transition: transform 0.3s ease-in-out;
+}
+
+.apresentacao__conteudo__titulo:hover, .apresentacao__conteudo__texto:hover, .apresentacao__links:hover, .apresentacao__imagem:hover {
+  transform: scale(1.05);
+}
